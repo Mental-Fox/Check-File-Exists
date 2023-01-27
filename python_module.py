@@ -17,8 +17,23 @@ def check_file_exists(curdir, name_file, size_file):
 
 
 curdir = os.path.abspath(os.curdir) + "\\"
-size_file = 3000000
-name_file = "ref"
+check_file_exists(curdir, "ref", 3000000)
 
-test_var = check_file_exists(curdir, name_file, size_file)
-print(test_var)
+# ---------------------------------------------------------------
+
+
+def getPath(curDir, targetFolder, levelsup):
+    os.chdir(curDir)
+    for i in range(levelsup):
+        if i > 0:
+            output = output + "\.."
+        else:
+            output = ".."
+    os.chdir(output)
+    targetDir = os.path.abspath(os.getcwd())
+    os.chdir(curDir)
+    return targetDir + targetFolder
+
+
+curdir = os.path.abspath(os.getcwd())
+source_path = getPath(curdir, "\\Daily\\", 1)

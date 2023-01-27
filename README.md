@@ -1,5 +1,6 @@
-**Check File Exists**
+## **Python Module**
 
+> ###### **Check File Exists**
 
 ```
 
@@ -17,7 +18,45 @@ def check_file_exists(curdir, name_file, size_file):
                     else:
                         return False
 
+curdir = os.path.abspath(os.curdir) + "\\"
+size_file = 3000000
+name_file = "ref"
+
+check_file_exists(curdir, name_file, size_file)
+
 ```
 
-
 Rus: Функция проходится в текущей папке по файлам если имя есть в файлах и если этот файл существует и не равен !=0 и если размер меньше чем указали то True если нет то False
+
+---
+
+> ###### **Get Path**
+
+```
+def getPath(curDir, targetFolder, levelsup):
+    os.chdir(curDir)
+    for i in range(levelsup):
+        if i > 0:
+            output = output + "\.."
+        else:
+            output = ".."
+    os.chdir(output)
+    targetDir = os.path.abspath(os.getcwd())
+    os.chdir(curDir)
+    return targetDir + targetFolder
+
+
+curdir = os.path.abspath(os.getcwd())
+
+getPath(curdir, "\\Daily\\", 1)
+
+```
+
+getPath(curdir, "\\Daily\\", 1)
+
+* curdir - текущая папка
+* "\\Daily\\" - путь к какой-то папки
+
+* 1 - уровень выхода из папки
+
+---
