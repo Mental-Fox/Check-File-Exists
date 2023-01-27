@@ -19,10 +19,7 @@ def check_file_exists(curdir, name_file, size_file):
                         return False
 
 curdir = os.path.abspath(os.curdir) + "\\"
-size_file = 3000000
-name_file = "ref"
-
-check_file_exists(curdir, name_file, size_file)
+check_file_exists(curdir, "ref", 3000000)
 
 ```
 
@@ -47,7 +44,6 @@ def getPath(curDir, targetFolder, levelsup):
 
 
 curdir = os.path.abspath(os.getcwd())
-
 getPath(curdir, "\\Daily\\", 1)
 
 ```
