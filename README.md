@@ -2,6 +2,7 @@
 
 
 ```
+
 def check_file_exists(curdir, name_file, size_file):
     # The function goes through the files in the current folder
     for root, dirs, files in os.walk(curdir):
@@ -15,6 +16,7 @@ def check_file_exists(curdir, name_file, size_file):
                         return True
                     else:
                         return False
+
 ```
 
 
